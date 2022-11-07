@@ -1,8 +1,8 @@
-<?php 
+<?php
 /*
 * * * Register and enqueue a custom stylesheet in the WordPress admin.
 */
-add_action( 'admin_enqueue_scripts', function () {	
+add_action( 'admin_enqueue_scripts', function () {
 
 	$version = wp_dcm_supports::plugin_data()->version;
 
@@ -15,7 +15,7 @@ add_action( 'admin_enqueue_scripts', function () {
 			'file_media'	=> 'All',
 			'file_cdn'		=> false
 		],
-		
+
 		'wpdcm-admin-js' => [
 			'file_type'		=> 'js',
 			'file_name'		=> 'wpdcm-admin',
