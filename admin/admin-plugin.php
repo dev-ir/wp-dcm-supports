@@ -40,6 +40,18 @@ add_action(
 				'required'	  => true,
 			),
 			array(
+				'name'        => 'Widgets for Google Reviews',
+				'slug'        => 'wp-reviews-plugin-for-google',
+				'is_callable' => 'wpseo_init',
+				'required'	  => false,
+			),
+			array(
+				'name'        => 'All-in-One WP Migration',
+				'slug'        => 'all-in-one-wp-migration',
+				'is_callable' => 'wpseo_init',
+				'required'	  => false,
+			),
+			array(
 				'name'               => 'WP Rocket',
 				'slug'               => 'dcm-rocket-plugin',
 				'source'             => wp_dcm_supports_dir_url . '/plugins/wp-rocket.zip',

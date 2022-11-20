@@ -34,3 +34,26 @@ add_action( 'admin_enqueue_scripts', function () {
 		}
 	endforeach;endif;
 } );
+
+add_action( 'wp_enqueue_scripts', function () {
+
+	$version = wp_dcm_supports::plugin_data()->version;
+
+	$wex_enqueue_scripts = [
+		'wpdcm-ui-style' => [
+			'file_type'		=> 'style',
+			'file_name'		=> 'wpdcm-interface',
+			'file_version'	=> $version,
+			'file_path'		=> wp_dcm_supports_dir_url.'/assets/css/',
+			'file_media'	=> 'All',
+			'file_cdn'		=> false
+		],
+	];
+	if( $wex_enqueue_scripts ) : foreach( $wex_enqueue_scripts as $assets => $file ) : $file = (object) $file;
+		if( $file->file_type == 'style' ){
+			wp_enqueue_style( $assets , ( $file->file_cdn ) ? $file->file_path : $file->file_path . $file->file_name. '.css' , array() , $file->file_version , $file->file_media );
+		}else{
+			wp_enqueue_script( $assets , ( $file->file_cdn ) ? $file->file_path : $file->file_path . $file->file_name. '.js' , array() , $file->file_version , $file->file_in_footer );
+		}
+	endforeach;endif;
+} );
