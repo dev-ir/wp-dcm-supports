@@ -1,10 +1,12 @@
 <?php 
 $get_setting = json_decode( get_option('dcm_settings',true) );
 add_action('wp_footer',function() use ($get_setting){
-	echo '
-	<a href="'.$get_setting->g_review.'" id="dcm-google-review" target="_blank">
-		<img src="'.wp_dcm_supports_dir_url.'assets/img/review-us-on-google-website-button.png">
-	<a/>';
+	if( !empty($get_setting->g_review) ){
+		echo '<div>
+		<a href="'.$get_setting->g_review.'" id="dcm-google-review" target="_blank">
+			<img src="'.wp_dcm_supports_dir_url.'assets/img/review-us-on-google-website-button.png">
+		<a/></div>';
+	}
 });
 
 // Close comments on the front-end
