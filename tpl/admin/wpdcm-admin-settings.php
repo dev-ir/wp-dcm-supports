@@ -17,7 +17,7 @@ if( !empty( get_option('dcm_settings') ) ){
                     <td>
                         <fieldset>
                             <label for="users_can_register">
-                                <input name="data[disable_comment]" type="checkbox"  value="1">
+                                <input name="data[disable_comment]" type="checkbox"   <?php echo !empty($response->disable_comment) ? 'checked' : ''; ?>>
                             </label>
                         </fieldset>
                     </td>
@@ -27,7 +27,7 @@ if( !empty( get_option('dcm_settings') ) ){
                     <td>
                         <fieldset>
                             <label for="users_can_register">
-                                <input name="data[disable_register_user]" type="checkbox"  value="1">
+                                <input name="data[disable_register_user]" type="checkbox"   <?php echo !empty($response->disable_register_user) ? 'checked' : ''; ?>>
                             </label>
                         </fieldset>
                         <p class="description" > <?php _e('Anyone can register', wp_dcm_supports_text_domain); ?> </p>
@@ -38,7 +38,7 @@ if( !empty( get_option('dcm_settings') ) ){
                     <td>
                         <fieldset>
                             <label for="users_can_register">
-                                <input name="data['divi_mega_menu]" type="checkbox"  value="1">
+                                <input name="data[divi_mega_menu]" type="checkbox"   <?php echo !empty($response->divi_mega_menu) ? 'checked' : ''; ?>>
                             </label>
                         </fieldset>
                         <p class="description" > <?php _e('Only for divi template', wp_dcm_supports_text_domain); ?> </p>
