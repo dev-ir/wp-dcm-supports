@@ -11,7 +11,7 @@ add_action( 'admin_enqueue_scripts', function () {
 			'file_type'		=> 'style',
 			'file_name'		=> 'wpdcm-admin',
 			'file_version'	=> $version,
-			'file_path'		=> wp_dcm_supports_dir_url.'/assets/css/',
+			'file_path'		=> wp_dcm_supports_dir_url.'assets/css/',
 			'file_media'	=> 'All',
 			'file_cdn'		=> false
 		],
@@ -20,7 +20,7 @@ add_action( 'admin_enqueue_scripts', function () {
 			'file_type'		=> 'js',
 			'file_name'		=> 'wpdcm-admin',
 			'file_version'	=> $version,
-			'file_path'		=> wp_dcm_supports_dir_url .'/assets/js/',
+			'file_path'		=> wp_dcm_supports_dir_url .'assets/js/',
 			'file_in_footer'=> true,
 			'file_cdn'		=> false
 		],
@@ -44,7 +44,7 @@ add_action( 'wp_enqueue_scripts', function () {
 			'file_type'		=> 'style',
 			'file_name'		=> 'wpdcm-interface',
 			'file_version'	=> $version,
-			'file_path'		=> wp_dcm_supports_dir_url.'/assets/css/',
+			'file_path'		=> wp_dcm_supports_dir_url.'assets/css/',
 			'file_media'	=> 'All',
 			'file_cdn'		=> false
 		],
