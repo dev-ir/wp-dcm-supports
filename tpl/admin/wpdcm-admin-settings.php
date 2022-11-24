@@ -41,7 +41,7 @@ if (!empty(get_option('dcm_settings'))) {
                         ],
                         'g_review' => [
                             'label' => 'Google Review URL',
-                            'class' => 'form-control',
+                            'class' => 'form-control regular-text ltr',
                             'type'  => 'url',
                             'slug'  => 'g_review',
                             'desc'  => 'This url address only for show in buttom image'
@@ -61,7 +61,7 @@ if (!empty(get_option('dcm_settings'))) {
                     <td>
                         <fieldset>
                             <label for="<?php echo $item['slug'];?>"></label>
-                            <input name="data[<?php echo $item['slug'];?>]"  class='<?php echo $item['class'];?>' type="<?php echo $item['type'];?>"<?php echo !empty( $options[$item['slug']] ) ? 'checked' : ''; ?> >
+                            <input name="data[<?php echo $item['slug'];?>]"  class='<?php echo $item['class'];?>' type="<?php echo $item['type'];?>"<?php echo !empty( $options[$item['slug']] && $item['type'] == 'checkbox') ? 'checked' : 'value="'.$options[$item['slug']].'"'; ?> >
                             <?php if( !empty($item['desc']) ) : ?>
                             <p class="description"> <?php _e($item['desc'], wp_dcm_supports_text_domain); ?></p>
                             <?php endif; ?>
