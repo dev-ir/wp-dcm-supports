@@ -1,2 +1,38 @@
-.wpdcm-lastest-news{}
-.wpdcm-lastest-news > .community-events-footer {padding-bottom: 0;padding-left: 0; }
+.wpdcm-lastest-news {}
+
+.wpdcm-lastest-news>.community-events-footer {
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.wpdcm-setting-image {
+    height: auto;
+    width: 75px;
+}
+
+.wpdcm-inline-flex {
+    display: inline-flex !important;
+}
+
+.wpdcm-inline-flex i {
+    margin-right: 0.3rem;
+}
+
+.wpdcm-inline-flex--center {
+    align-items: center;
+}
+
+.wpdcm-d-none {
+    display: none !important;
+}
+
+.wpdcm-setting-file {
+    background: #cccc;
+    padding: 0.4rem!important;
+    margin-bottom: 10px;
+    border: 1px solid #c3c3c3;
+    border-radius: 4px;
+}
+.wpdcm-link{
+    text-decoration: none;
+}
