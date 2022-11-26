@@ -41,9 +41,15 @@ if (!empty(get_option('dcm_settings'))) {
     <form method="post" enctype="multipart/form-data">
         <?php settings_fields('dcm_settings'); ?>
         <table class="form-table" role="presentation">
-            <tbody>
+            <tbody class="">
                 <?php foreach ([
                     'fields' => [
+                        'mobile_contact' => [
+                            'label' => 'Contact on Mobile',
+                            'class' => 'form-control',
+                            'type'  => 'checkbox',
+                            'slug'  => 'mobile_contact'
+                        ],
                         'disable_comment' => [
                             'label' => 'Disable Comments',
                             'class' => 'form-control',
@@ -67,7 +73,7 @@ if (!empty(get_option('dcm_settings'))) {
                             'class' => 'form-control regular-text ltr',
                             'type'  => 'url',
                             'slug'  => 'g_review',
-                            'desc'  => 'This url address only for show in buttom image'
+                            'desc'  => 'This url address only for show in buttom image.'
                         ],
                         'g_review_image' => [
                             'label' => 'Google Review image',
@@ -106,11 +112,13 @@ if (!empty(get_option('dcm_settings'))) {
                                             </div>
                                         </div>
                                         <?php endif; ?>
+                                    <?php elseif($item['type'] == 'checkbox') : ?>
+                                        <input name="data[<?php echo $item['slug']; ?>]" class='<?php echo $item['class']; ?>' type="<?php echo $item['type']; ?>" <?php echo !empty($options[$item['slug']]) ? 'checked' : ''; ?>>
                                     <?php else : ?>
-                                        <input name="data[<?php echo $item['slug']; ?>]" class='<?php echo $item['class']; ?>' type="<?php echo $item['type']; ?>" <?php echo !empty($options[$item['slug']] && $item['type'] == 'checkbox') ? 'checked' : 'value="' . $options[$item['slug']] . '"'; ?>>
+                                        <input name="data[<?php echo $item['slug']; ?>]" class='<?php echo $item['class']; ?>' type="<?php echo $item['type']; ?>" value="<?php echo !empty( $options[$item['slug']] ) ? $options[$item['slug']] : ''; ?>" >
                                     <?php endif; ?>
                                     <?php if (!empty($item['desc'])) : ?>
-                                        <p class="description"> <?php _e($item['desc'], wp_dcm_supports_text_domain); ?></p>
+                                        <span class="description"> <?php _e($item['desc'], wp_dcm_supports_text_domain); ?></span>
                                     <?php endif; ?>
                                 </fieldset>
                             </td>

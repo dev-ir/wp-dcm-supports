@@ -50,7 +50,6 @@ if( ! class_exists('wp_dcm_supports') ) :
 				'admin-plugin'				=> 'admin',
 				'admin-widget'				=> 'admin',
 				'class-plugin-need'			=> 'libs',
-
 			];
 			foreach( $included as $file => $folder ){
 				require_once( $folder.'/'.$file.'.php'  );

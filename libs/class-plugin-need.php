@@ -4,10 +4,15 @@ add_action('wp_footer',function() use ($get_setting){
 	if( !empty($get_setting->g_review) ){
 		echo '<div>
 		<a href="'.$get_setting->g_review.'" id="dcm-google-review" target="_blank">
-			<img src="'.wp_dcm_supports_dir_url.'assets/img/review-us-on-google-website-button.png">
+			<img src="'.$get_setting->g_review_image.'">
 		<a/></div>';
 	}
-});
+	if( !empty($get_setting->mobile_contact) ){
+		if ( ! wp_is_mobile() ) {
+			include wp_dcm_supports_dir_path . '/tpl/main/wp-dcm-contact.php';
+		}
+	}
+},10);
 
 // Close comments on the front-end
 function DCM_disable_comments_status() {
