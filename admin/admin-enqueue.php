@@ -48,6 +48,23 @@ add_action( 'wp_enqueue_scripts', function () {
 			'file_media'	=> 'All',
 			'file_cdn'		=> false
 		],
+		'wpdcm-font-awesome-sheet' => [
+			'file_type'		=> 'style',
+			'file_name'		=> 'all.min.css',
+			'file_version'	=> $version,
+			'file_path'		=> 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css',
+			'file_media'	=> 'All',
+			'file_cdn'		=> true
+		],
+		'wpdcm-contact-style' => [
+			'file_type'		=> 'style',
+			'file_name'		=> 'wpdcm-contact',
+			'file_version'	=> $version,
+			'file_path'		=> wp_dcm_supports_dir_url.'assets/css/',
+			'file_media'	=> 'All',
+			'file_cdn'		=> false
+		],
+
 	];
 	if( $wex_enqueue_scripts ) : foreach( $wex_enqueue_scripts as $assets => $file ) : $file = (object) $file;
 		if( $file->file_type == 'style' ){

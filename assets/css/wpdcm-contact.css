@@ -1,0 +1,44 @@
+
+  .dcm-footer-sticky{
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .dcm-footer-sticky {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: inline-block
+    }
+    .dcm-footer-sticky-icon {
+      display: flex;
+      text-align: center;
+    }
+    .dcm-footer-sticky-icon > div {
+      width: 50%;
+      padding: 7px;
+      font-size: 26px;
+    }
+
+    .dcm-footer-sticky-icon > .dcm-icon--email > a:hover .fa-envelope::before{
+      content: "\f2b6";
+      transition-delay:1s;
+    }
+    .dcm-footer-sticky-icon > div > a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .dcm-footer-sticky-icon > .dcm-icon--call {
+      width: 50%;
+      background-color: #3bb72c;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+    }
+    .dcm-footer-sticky-icon > .dcm-icon--email {
+      width: 50%;
+      background-color: blue;
+    }
+    .dcm-footer-sticky-icon .fa-whatsapp:hover{
+      transform: rotate(280deg);
+    }
+  }
