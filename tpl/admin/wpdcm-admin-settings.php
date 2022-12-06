@@ -94,6 +94,12 @@ if (!empty(get_option('dcm_settings'))) {
                             'type'  => 'text',
                             'slug'  => 'phone_number',
                         ],
+                        'social_whatsapp' => [
+                            'label' => 'Whatsapp Number',
+                            'class' => 'form-control regular-text ltr',
+                            'type'  => 'text',
+                            'slug'  => 'social_whatsapp',
+                        ],
                     ],
                 ] as $field) : foreach ($field as $item) :
                 ?>

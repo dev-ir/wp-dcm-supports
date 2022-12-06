@@ -15,5 +15,10 @@ if (!empty(get_option('dcm_settings'))) {
       <a href="mailto:<?php echo $options['email_address'];?>"><i class="far fa-envelope"></i></a>
     </div>
     <?php endif; ?>
+    <?php if( !empty($options['social_whatsapp']) ) : ?>
+    <div class="dcm-icon--whatsapp">
+      <a href="https://wa.me/<?php echo $options['social_whatsapp'];?>"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <?php endif; ?>
   </div>
 </div>
