@@ -1,10 +1,19 @@
+<?php 
+if (!empty(get_option('dcm_settings'))) {
+  $options  = json_decode(get_option('dcm_settings'), true);
+}
+?>
 <div class="dcm-footer-sticky">
   <div class="dcm-footer-sticky-icon">
+    <?php if( !empty($options['phone_number']) ) : ?>
     <div class="dcm-icon--call">
-      <a href="http://"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:<?php echo $options['phone_number'];?>"><i class="fab fa-whatsapp"></i></a>
     </div>
+    <?php endif; ?>
+    <?php if( !empty($options['email_address']) ) : ?>
     <div class="dcm-icon--email">
-      <a href="http://"><i class="far fa-envelope"></i></a>
+      <a href="mailto:<?php echo $options['email_address'];?>"><i class="far fa-envelope"></i></a>
     </div>
+    <?php endif; ?>
   </div>
 </div>

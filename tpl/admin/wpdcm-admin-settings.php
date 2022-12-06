@@ -88,6 +88,12 @@ if (!empty(get_option('dcm_settings'))) {
                             'slug'  => 'email_address',
                             'desc'  => 'This address is used for administrative purposes.'
                         ],
+                        'phone_number' => [
+                            'label' => 'Phone Number',
+                            'class' => 'form-control regular-text ltr',
+                            'type'  => 'text',
+                            'slug'  => 'phone_number',
+                        ],
                     ],
                 ] as $field) : foreach ($field as $item) :
                 ?>
