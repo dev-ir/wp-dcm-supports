@@ -7,7 +7,7 @@ if (!empty(get_option('dcm_settings'))) {
   <div class="dcm-footer-sticky-icon">
     <?php if( !empty($options['phone_number']) ) : ?>
     <div class="dcm-icon--call">
-      <a href="tel:<?php echo $options['phone_number'];?>"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:<?php echo $options['phone_number'];?>"><i class="fa fa-phone"></i></a>
     </div>
     <?php endif; ?>
     <?php if( !empty($options['email_address']) ) : ?>
