@@ -5,7 +5,7 @@
  * Description: A set of customized actions on wordpress websites for Digital Connect Marketing ltd.  It blocks all comments, add a button to all pages, and list some plugins that are recommended for clients.
  * Requires at least: 5.8
  * Requires PHP: 5.6
- * Version: 1.6.2
+ * Version: 1.6.3
  * Author: Mahdi Ebrahimi
  * Author URI: https://dvgroups.ca
  * License: GPLv2 or later
