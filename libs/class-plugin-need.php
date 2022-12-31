@@ -8,11 +8,9 @@ add_action('wp_footer',function() use ($get_setting){
 		<a/></div>';
 	}
 	if( !empty($get_setting->mobile_contact) ){
-		if ( wp_is_mobile() ) {
-			include wp_dcm_supports_dir_path . '/tpl/main/wp-dcm-contact.php';
-		}
+        include wp_dcm_supports_dir_path . '/tpl/main/wp-dcm-contact.php';
 	}
-},10);
+},99);
 
 // Close comments on the front-end
 function DCM_disable_comments_status() {
