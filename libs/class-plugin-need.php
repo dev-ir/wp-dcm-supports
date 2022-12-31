@@ -8,7 +8,7 @@ add_action('wp_footer',function() use ($get_setting){
 		<a/></div>';
 	}
 	if( !empty($get_setting->mobile_contact) ){
-		if ( ! wp_is_mobile() ) {
+		if ( wp_is_mobile() ) {
 			include wp_dcm_supports_dir_path . '/tpl/main/wp-dcm-contact.php';
 		}
 	}
