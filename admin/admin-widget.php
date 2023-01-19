@@ -11,7 +11,7 @@ add_action('wp_dashboard_setup', function () {
 					<?php
 					require_once(ABSPATH . WPINC . '/feed.php');
 					if (function_exists('fetch_feed')) {
-						$rss = fetch_feed('https://developermen.ir/question/feed/');
+						$rss = fetch_feed('http://dcmarketing.ca/');
 					}
 					$maxitems = 0;
 
