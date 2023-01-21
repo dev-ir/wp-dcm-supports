@@ -45,7 +45,7 @@ if( ! class_exists('wp_dcm_supports') ) :
 				'class-plugin-activation'	=> 'libs',
 				'class-wp-list'				=> 'libs',
 				'admin-enqueue'				=> 'admin',
-				'admin-bar'					=> 'admin',
+				// 'admin-bar'					=> 'admin',
 				'admin-menu'				=> 'admin',
 				'admin-plugin'				=> 'admin',
 				'admin-widget'				=> 'admin',
