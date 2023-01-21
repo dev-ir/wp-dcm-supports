@@ -36,7 +36,6 @@ if (!empty(get_option('dcm_settings'))) {
     <?php settings_errors(); ?>
     <div class="nav-tab-wrapper">
         <a href="?page=wpdcm-settings&tab=display_options" class="nav-tab <?php echo $active_tab == 'display_options' ? 'nav-tab-active' : ''; ?>">Settings</a>
-        <a href="?page=wpdcm-settings&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>">Social Options</a>
     </div>
     <form method="post" enctype="multipart/form-data">
         <?php settings_fields('dcm_settings'); ?>
@@ -62,12 +61,12 @@ if (!empty(get_option('dcm_settings'))) {
                             'type'  => 'checkbox',
                             'slug'  => 'disable_register_user'
                         ],
-                        'divi_mega_menu' => [
-                            'label' => 'Mega Menu',
-                            'class' => 'form-control',
-                            'type'  => 'checkbox',
-                            'slug'  => 'divi_mega_menu'
-                        ],
+                        // 'divi_mega_menu' => [
+                        //     'label' => 'Mega Menu',
+                        //     'class' => 'form-control',
+                        //     'type'  => 'checkbox',
+                        //     'slug'  => 'divi_mega_menu'
+                        // ],
                         'g_review' => [
                             'label' => 'Google Review URL',
                             'class' => 'form-control regular-text ltr',

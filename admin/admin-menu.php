@@ -51,15 +51,8 @@ if( ! function_exists('wpdcm_router') ){
         if( !empty( sanitize_text_field( $_GET['page'] ) ) ){
             $call = str_replace('wpdcm-','',sanitize_text_field($_GET['page']));
             switch( $call ){
-                case 'home':
-                    require_once wp_dcm_supports_dir_path.'tpl/admin/wpdcm-admin-'.$call.'.php';
-                break;
-
+                
                 case 'settings':
-                    require_once wp_dcm_supports_dir_path.'tpl/admin/wpdcm-admin-'.$call.'.php';
-                break;
-
-                case 'support':
                     require_once wp_dcm_supports_dir_path.'tpl/admin/wpdcm-admin-'.$call.'.php';
                 break;
 
