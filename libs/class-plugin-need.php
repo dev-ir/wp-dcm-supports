@@ -2,9 +2,10 @@
 $get_setting = json_decode( get_option('dcm_settings',true) );
 add_action('wp_footer',function() use ($get_setting){
 	if( !empty($get_setting->g_review) ){
+		$image = !empty($get_setting->g_review_image) ? $get_setting->g_review_image : wp_dcm_supports_dir_url.'assets/img/logo.jpg';
 		echo '<div>
 		<a href="'.$get_setting->g_review.'" id="dcm-google-review" target="_blank">
-			<img src="'. empty( $get_setting->g_review_image ) ? wp_dcm_supports_dir_url.'/assets/img/logo.jpg' : $get_setting->g_review_image .'">
+			<img src="'.$image.'">
 		<a/></div>';
 	}
 	if( !empty($get_setting->mobile_contact) ){
