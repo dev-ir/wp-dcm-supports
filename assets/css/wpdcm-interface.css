@@ -2,6 +2,7 @@
     bottom: 0;
     position: fixed;
     z-index: 1;
+    left: 0;
 }
 #dcm-google-review img{
     height: 50px;

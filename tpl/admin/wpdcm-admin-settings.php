@@ -61,12 +61,6 @@ if (!empty(get_option('dcm_settings'))) {
                             'type'  => 'checkbox',
                             'slug'  => 'disable_register_user'
                         ],
-                        // 'divi_mega_menu' => [
-                        //     'label' => 'Mega Menu',
-                        //     'class' => 'form-control',
-                        //     'type'  => 'checkbox',
-                        //     'slug'  => 'divi_mega_menu'
-                        // ],
                         'g_review' => [
                             'label' => 'Google Review URL',
                             'class' => 'form-control regular-text ltr',
@@ -98,6 +92,26 @@ if (!empty(get_option('dcm_settings'))) {
                             'class' => 'form-control regular-text ltr',
                             'type'  => 'text',
                             'slug'  => 'social_whatsapp',
+                            'hr'    => true,
+
+                        ],
+                        'social_whatsapp_color' => [
+                            'label' => 'Whatsapp Color',
+                            'class' => 'form-control regular-text ltr',
+                            'type'  => 'text',
+                            'slug'  => 'social_whatsapp_color',
+                        ],
+                        'social_Email_color' => [
+                            'label' => 'Email Color',
+                            'class' => 'form-control regular-text ltr',
+                            'type'  => 'text',
+                            'slug'  => 'social_Email_color',
+                        ],
+                        'social_Phone_color' => [
+                            'label' => 'Phone Color',
+                            'class' => 'form-control regular-text ltr',
+                            'type'  => 'text',
+                            'slug'  => 'social_Phone_color',
                         ],
                     ],
                 ] as $field) : foreach ($field as $item) :
@@ -134,6 +148,7 @@ if (!empty(get_option('dcm_settings'))) {
                                 </fieldset>
                             </td>
                         </tr>
+
                 <?php endforeach;
                 endforeach; ?>
             </tbody>
