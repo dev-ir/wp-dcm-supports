@@ -1,8 +1,9 @@
 <?php
+$input_files = ['g_review_image_mobile', 'g_review_image' ];
 $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'display_options';
 if (isset($_POST['submit'])) {
     $input = $_POST['data'];
-    if (!empty($_FILES['data']['name']['g_review_image'])) {
+    if (!empty($_FILES['data']['name'])) {
         $files = $_FILES['data'];
         foreach ($files['name'] as $key => $value) {
             if ($files['name'][$key]) {
@@ -15,16 +16,18 @@ if (isset($_POST['submit'])) {
                 );
                 $movefile = wp_handle_upload($file, array('test_form' => false));
                 if ($movefile && !isset($movefile['error'])) {
-                    $input['g_review_image'] = $movefile['url'];
+                    $input[$key] = $movefile['url'];
                 } else {
                     echo $movefile['error'];
                 }
             }
         }
     } else {
-        $input['g_review_image'] = sanitize_text_field($_POST['data']['old_g_review_image']);
+        foreach( $input_files as $key ){
+            $input[$key] = sanitize_text_field($_POST['data']['old_'.$key]);
+        }
     }
-    unset($input['old_g_review_image']);
+    unset($input['old_'.$key]);
     update_option('dcm_settings', json_encode($input, JSON_UNESCAPED_UNICODE));
 }
 if (!empty(get_option('dcm_settings'))) {
@@ -69,10 +72,16 @@ if (!empty(get_option('dcm_settings'))) {
                             'desc'  => 'This url address only for show in buttom image.'
                         ],
                         'g_review_image' => [
-                            'label' => 'Google Review image',
+                            'label' => 'GR image',
                             'class' => 'wpdcm-setting-file',
                             'type'  => 'file',
                             'slug'  => 'g_review_image',
+                        ],
+                        'g_review_image_mobile' => [
+                            'label' => 'GR Mobile image',
+                            'class' => 'wpdcm-setting-file',
+                            'type'  => 'file',
+                            'slug'  => 'g_review_image_mobile',
                         ],
                         'email_address' => [
                             'label' => 'Email address',
@@ -98,19 +107,19 @@ if (!empty(get_option('dcm_settings'))) {
                         'social_whatsapp_color' => [
                             'label' => 'Whatsapp Color',
                             'class' => 'form-control regular-text ltr',
-                            'type'  => 'text',
+                            'type'  => 'color',
                             'slug'  => 'social_whatsapp_color',
                         ],
                         'social_Email_color' => [
                             'label' => 'Email Color',
                             'class' => 'form-control regular-text ltr',
-                            'type'  => 'text',
+                            'type'  => 'color',
                             'slug'  => 'social_Email_color',
                         ],
                         'social_Phone_color' => [
                             'label' => 'Phone Color',
                             'class' => 'form-control regular-text ltr',
-                            'type'  => 'text',
+                            'type'  => 'color',
                             'slug'  => 'social_Phone_color',
                         ],
                     ],
