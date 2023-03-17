@@ -1,9 +1,32 @@
-#dcm-google-review{
-    bottom: 50px;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-}
 #dcm-google-review img{
     height: 50px;
+}
+@media only screen and (min-width:769px){
+    #dcm-google-review{
+        bottom: 0px;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+    }
+    #gr-desktop-visibility{
+        display:block;
+    }
+    #gr-mobile-visibility{
+        display:none;
+    }
+}
+
+@media only screen and (max-width:769px){
+    #dcm-google-review{
+        bottom: 50px;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+    }
+    #gr-desktop-visibility{
+        display:none;
+    }
+    #gr-mobile-visibility{
+        display:block;
+    }
 }

@@ -2,14 +2,12 @@
 $get_setting = json_decode( get_option('dcm_settings',true) );
 add_action('wp_footer',function() use ($get_setting){
 	if( !empty($get_setting->g_review) ){
-		if( wp_is_mobile() ){
-			$image = !empty($get_setting->g_review_image) ? $get_setting->g_review_image : wp_dcm_supports_dir_url.'assets/img/logo.jpg';
-		}else{
-			$image = !empty($get_setting->g_review_image_mobile) ? $get_setting->g_review_image_mobile : wp_dcm_supports_dir_url.'assets/img/logo.jpg';
-		}
+        $image_desktop = !empty($get_setting->g_review_image) ? $get_setting->g_review_image : wp_dcm_supports_dir_url.'assets/img/gr-desktop.jpg';
+        $image_mobile = !empty($get_setting->g_review_image_mobile) ? $get_setting->g_review_image_mobile : wp_dcm_supports_dir_url.'assets/img/gr-mobile.jpg';
 		echo '<div>
 		<a href="'.$get_setting->g_review.'"  alt="Google Review" id="dcm-google-review" target="_blank">
-			<img src="'.$image.'" title="Google Review">
+			<img src="'.$image_mobile.'" title="Google Review" id="gr-mobile-visibility">
+			<img src="'.$image_desktop.'" title="Google Review" id="gr-desktop-visibility">
 		<a/></div>';
 	}
 	if( !empty($get_setting->mobile_contact) ){
